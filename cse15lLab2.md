@@ -4,7 +4,7 @@ Here is the first screenshot using /add-message: ![Image](Screenshot 2023-04-24 
 For this screenshot, the handleRequest method is called. The relevant argument is the url that is typed in. The method takes the query of the url if
 the path is /add-member. Then, the substring after the '=' is taken from the query is added to our String s, which is returned. In this specific request
 the value of s changes from "" to "what'sup\n". 
-Here is the second screenshot using \add-message: ![Image](Screenshot 2023-04-24 at 9.12.42 PM.png)
+Here is the second screenshot using \add-message: ![Image](Screenshot 2023-04-24 at 9.12.42 PM.png) <br>
 For this screenshot, the handleRequest method is called. The relevant argument is again the url that is typed in. THe method takes the query of the url
 if the path is /add-member. Then the substring after the '=' from the query is added to our String s, which is returned. In this specific request
 the value of s changes from "what'sup" to "what'sup\nhowareyoudoing\n"
