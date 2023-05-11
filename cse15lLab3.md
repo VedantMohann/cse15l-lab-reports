@@ -2,6 +2,7 @@
 For this lab report, I chose the grep command, and I am exploring the command-line options `-i, -v, -c, -l`. I found information on this command on [wikipedia](https://en.wikibooks.org/wiki/Grep). 
 
 <h4> Command 1 <h4>
+	
 `-i` ignores upper and lower case when searching for lines
 
 <h3>Part 1</h3>
