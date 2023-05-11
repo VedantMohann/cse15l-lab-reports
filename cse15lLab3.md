@@ -1,10 +1,10 @@
 
 For this lab report, I chose the grep command, and I am exploring the command-line options `-i, -v, -c, -l`. I found information on this command on [wikipedia](https://en.wikibooks.org/wiki/Grep). 
 
- Command 1
+ Command 1<br>
   `-i` ignores upper and lower case when searching for lines
 
-<h3>Part 1</h3>
+<h3>Part 1</h3> 
 here is my code for StringServer: ![Image](Screenshot 2023-04-24 at 9.10.00 PM.png)
 Here is the first screenshot using /add-message: ![Image](Screenshot 2023-05-05 at 3.16.05 PM.png) <br>
 For this screenshot, the handleRequest method is called. The relevant argument is the url that is typed in. The method takes the query of the url if
