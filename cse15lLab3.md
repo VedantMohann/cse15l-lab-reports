@@ -36,3 +36,39 @@ What If? <br>
 grep -i -v "e" 911report/chapter-1.txt <br>
 What If? <br>
  ```
+  <h4> Command 3 </h4> 
+`-c` outputs the count of matching lines 
+<h6> example 1 </h6>
+```
+ grep -c "diversity" government/About_LSC/diversity_priorities.txt
+44
+ ```
+ <h6> example 2 </h6>
+```
+grep -c "hello" government/About_LSC/diversity_priorities.txt 
+0
+ ```
+ 
+   <h4> Command 4 </h4> 
+`-l` outputs matching files only
+<h6> example 1 </h6>
+```
+ grep -l "chemical reaction" biomed/*.txt
+biomed/1471-2105-3-38.txt
+biomed/1471-2148-2-14.txt
+biomed/1471-2164-3-19.txt
+biomed/1471-2180-3-4.txt
+biomed/1471-2229-1-2.txt
+biomed/gb-2001-2-4-research0012.txt
+biomed/gb-2002-3-5-research0024.txt
+```
+ <h6> example 2 </h6>
+```
+grep -l "hammer" */*.txt
+911report/chapter-12.txt
+biomed/1471-2091-3-14.txt
+biomed/1471-2105-3-14.txt
+biomed/1471-2105-3-26.txt
+biomed/1471-2407-2-18.txt
+biomed/1472-6750-2-21.txt
+```
