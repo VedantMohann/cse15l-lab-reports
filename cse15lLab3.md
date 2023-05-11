@@ -4,6 +4,11 @@ For this lab report, I chose the grep command, and I am exploring the command-li
  <h4> Command 1 </h4> 
 `-i` ignores upper and lower case when searching for lines
 <h6> example 1 </h6>
+```
+  grep -i "six" biomed/1468-6708-3-1.txt <br>
+        Six large controlled population-based studies of <br>
+          examining health status over time, we added a sixth <br>
+```
 <h3>Part 1</h3> 
 here is my code for StringServer: ![Image](Screenshot 2023-04-24 at 9.10.00 PM.png)
 Here is the first screenshot using /add-message: ![Image](Screenshot 2023-05-05 at 3.16.05 PM.png) <br>
