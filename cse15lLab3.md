@@ -3,6 +3,8 @@ For this lab report, I chose the grep command, and I am exploring the command-li
 
 <h4> Command 1 <h4>
 	
+	
+	
 `-i` ignores upper and lower case when searching for lines
 
 <h3>Part 1</h3>
