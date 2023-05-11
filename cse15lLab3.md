@@ -73,22 +73,62 @@ biomed/1471-2105-3-26.txt
 biomed/1471-2407-2-18.txt
 biomed/1472-6750-2-21.txt
 ```
-Hey future students, I'll walk you through how to log into a course specific account on `ieng6`
-<h3>Step 1</h3>
-1. First, we will need to install VScode. When I tried this lab, I already had VScode installed, however, some of you might not. To download VScode, click on this [link](https://code.visualstudio.com/download) which will take you over to the download website. Simply follow the steps and you should have VScode set up fairly quickly. When you open VScode, it should look like this:
-![Image](Screenshot 2023-04-09 at 5.50.47 PM.png)
-<h3>Step 2</h3>
-2. Next, we will remotely connect to the remote server. To find your account username for the AD Domain, check out this [link](https://sdacs.ucsd.edu/~icc/index.php). By typing in your username and ID, you can find all your other AD Domain accounts. Check out this [link](https://drive.google.com/file/d/17IDZn8Qq7Q0RkYMxdiIR0o6HJ3B5YqSW/view) to see how you can reset your password. After finding your 15l lab account, click on your account, click on the link for the password change, and follow the steps provided. Although we were supposed to use the AD domains that are issued to us for the course, my lab found issues using these domains, so instead we used our tritonlink username + "ieng6.ucsd.edu" along with our tritonlink password. For example, my account would be `vemohan@ieng6.ucsd.edu`. In the terminal type `$ ssh vemohan@ieng6.ucsd.edu` but use your email instead of mine. If it asks a yes/no question, just say yes. Then, type in your tritonlink password. The characters will not show while typing your password in. Afterwards, your terminal might look something like this:
-![Image](Screenshot 2023-04-09 at 6.02.22 PM.png)
-<h3>Step 3</h3>
-3. Now, let's run some commands. some useful commands you can run are
+<h3>Part 1</h3>
+here is my code for StringServer: ![Image](Screenshot 2023-04-24 at 9.10.00 PM.png)
+Here is the first screenshot using /add-message: ![Image](Screenshot 2023-05-05 at 3.16.05 PM.png) <br>
+For this screenshot, the handleRequest method is called. The relevant argument is the url that is typed in. The method takes the query of the url if
+the path is /add-member. Then, the substring after the '=' is taken from the query is added to our String s, which is returned. In this specific request
+the value of s changes from "" to "what'sup\n". 
+Here is the second screenshot using \add-message: ![Image](Screenshot 2023-05-05 at 3.19.28 PM.png) <br>
+For this screenshot, the `handleRequest` method is called. The relevant argument is again the url that is typed in. The method takes the query of the url
+if the path is `/add-member`. Then the substring after the '=' from the query is added to our String `s`, which is returned. In this specific request
+the value of s changes from `"what's up"` to `"what's up\nhow are you doing\n"`
+<h3>Part 2</h3>
+I chose the bug in the reverseInPlace(int[] arr) method from ArrayExamples in lab3. A failure inducing input for the buggy program was:
 ```
-cd ~ //change directory to home directoy
-cd //change director
-ls -lat //show list of files sorted by date
-ls -a //all hidden files are shown
-cp /home/linux/ieng6/cs15lsp23/public/hello.txt ~/ //copy file to home directory
-```
-What shows up when you type in these commands? Take note of it. Also see if you can produce any error messages. Here's mine:
-![Image](Screenshot 2023-04-09 at 6.05.12 PM.png)
+@Test
+  public void testReverseInPlace2() {
+    int[] input1 = { 3,2,1 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 1,2,3 }, input1);
+  }
+ ```
+ An input that didn't induce a failure was:
+ ```
+ 	@Test 
+	public void testReverseInPlace() {
+    int[] input1 = { 3 };
+    ArrayExamples.reverseInPlace(input1);
+    assertArrayEquals(new int[]{ 3 }, input1);
+	}
+ ```
+ Here is the symptom of the bug:
+ ![Image](Screenshot 2023-04-24 at 9.28.53 PM.png)
+ The bug was that the for loop should only interate until halfway through the array, and we need to swap the two numbers rather than setting
+ arr[i] = arr[arr.length-i-1].
+ Before:
+ ```
+ static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length; i += 1) {
+      arr[i] = arr[arr.length - i - 1];
+    }
+  }
+  ```
+  After:
+  ```
+  static void reverseInPlace(int[] arr) {
+    for(int i = 0; i < arr.length/2; i += 1) {
+      int temp = arr[i];
+      arr[i] = arr[arr.length - i - 1];
+      arr[arr.length-i-1] = temp;
+    }
+  }
+  ```
+  This fix addresses the issue because before the method would copy the right half of the array onto the left, and then copy the left onto the right,
+  but the left was already set to the right, so it copies the right onto the right. Therefore, the right half of the array experiences no changes. So
+  we need to swap the two terms rather than setting left = right. If we do this, then we only need to swap until halfway, since then we will be swapping twice.
+  <h3>Part 3</h3>
+  In lab 2, I learned how to make a local host website. I thought it was one of the coolest cs exercises I've done yet, since all my coding knowledge
+  so far has simply been in an IDE and terminal. However this time, I actually got to develop a website. Even though it was extremely simple, it made me 
+  feel proud for coming this far in computer science and keeps me eager to learn more. 
 
