@@ -1,6 +1,6 @@
 Dear TA,
-I was working on a leetcode problem (#238, product of arrays except self), and I am getting an ArrayOutOfBoundsException.
-I am using IntellIJ. And get an out of bounds excpetion. The failure-inducing input is [1,2,3,4]. Attached are screenshots
+I was working on a leetcode problem (#238, product of arrays except self), and I am getting an ArrayOutOfBoundsException. 
+I am using IntellIJ. I put my code in a java file, and I am using a bash file to compile and run the java file. . The failure-inducing input is [1,2,3,4]. Attached are screenshots
 of my code. Please let me know how I can fix my code. Thanks!
 ![Image](lab5-1.png) <br>
 ![Image](lab5-2.png) <br>
