@@ -1,24 +1,32 @@
 <h3>Step 4</h3>
 ![Image](step4.png) <br>
-I typed in my log in and password
-
+`ssh vemohan@ieng6.ucsd.edu <enter>`
+`my password here <enter>`
+  
 <h3>Step 5</h3>
 ![Image](step5.png) <br>
-`git clone https: //github.com/VedantMohann/lab7`
+`git clone https://github.com/VedantMohann/lab7 <enter>`
 I cloned the repository I forked
 
 <h3>Step 6</h3>
 ![Image](step6.png) <br>
-`bash test.sh`
+`ls <enter>`
+`cd lab7 <enter>`
+`ls <enter>`
+`bash test.sh <enter>`
 running the junit test commands that are in the bash script
 
 <h3>Step 7</h3>
 ![Image](step7.png) <br>
 ```
-vim ListExamples.java
-(series of <h>,<j>,<k>,<l> commands to move cursor to error)
-<x> <i> <2> <esc>
-<:w> <:q> <enter>
+vim ListExamples.java <enter>
+<j> 40 times (to move cursor down)
+<l> 7 times ( to move cursor right)
+<x> to delete
+<i> to insert
+2
+<esc> to escape insert mode
+<:wq> save and quit <enter>
 ```
 Debuggin the code in vim
 
@@ -29,5 +37,5 @@ Rerunning the junit tests, which I can access using the up arrow
 
 <h3>Step 9</h3>
 ![Image](step9.png) <br>
-`git commit -m "changed index1 to index2"`
+`git commit -m "changed index1 to index2" <enter>`
 Committing changes
